@@ -790,7 +790,7 @@ const customFetch = ky.create({
   }
 })
 
-export const api = new Api({
+export const client = new Api({
   customFetch
 })
 EOF
