@@ -693,6 +693,11 @@ export const nanumSquare = localFont({
       weight: '700',
       style: 'normal',
     },
+    {
+      path: '../../public/fonts/NanumSquareEB.woff2',
+      weight: '800',
+      style: 'normal'
+    }
   ],
   variable: '--font-nanum-square',
   display: 'swap',
