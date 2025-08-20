@@ -15,5 +15,5 @@ chmod +x install.sh
 
 ## 설치
 ```shell
-sudo ./install.sh
+./install.sh
 ```
