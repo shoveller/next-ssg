@@ -5,7 +5,7 @@
 # 사용법
 ## 다운로드
 ```shell
-wget https://github.com/shoveller/next-ssg/raw/main/install.sh
+curl https://github.com/shoveller/next-ssg/raw/main/install.sh
 ```
 
 ## 실행권한 부여
