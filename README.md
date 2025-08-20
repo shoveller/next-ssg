@@ -12,7 +12,7 @@
 # 사용법
 ## 다운로드
 ```shell
-curl https://github.com/shoveller/next-ssg/raw/main/install.sh
+curl -o install.sh https://raw.githubusercontent.com/shoveller/next-ssg/main/install.sh
 ```
 
 ## 실행권한 부여
