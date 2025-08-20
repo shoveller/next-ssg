@@ -514,7 +514,8 @@ const eslintConfig = [
 export default eslintConfig
 EOF
 
-    # package.json에 eslint 스크립트 추가
+    # 기존 lint 스크립트 삭제 후 새로운 eslint 스크립트 추가
+    npm pkg delete scripts.lint
     npm pkg set scripts.eslint="eslint --fix --ignore-pattern .gitignore --cache --cache-location ./node_modules/.cache/eslint ."
     
     print_success "ESLint 설정 완료"
