@@ -12,14 +12,18 @@ pnpm create next-app@latest
 - 아니라면 최소한 sass 를 설치해서 css module 정도는 사용하도록 한다.
   https://nextjs.org/docs/app/guides/sass
 
-## 2. output 옵션을 설정
-- 이 설정이 `next export` 명령을 대신한다.
+## 2. output 옵션, images.unoptimized 을 설정
+- `output: 'export'`: ssg 모드로 빌드한다.
+- `images.unoptimized: true`: cdn 레벨의 이미지 최적화를 사용하지 않는다.
 ```ts
 // next.config.ts
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-    output: 'export'
+    output: 'export', // ssg 모드로 빌드한다
+    images: {
+        unoptimized: true // cdn 레벨의 이미지 최적화를 사용하지 않는다
+    }
 }
 
 export default nextConfig
