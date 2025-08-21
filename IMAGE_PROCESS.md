@@ -38,7 +38,22 @@ module.exports = nextConfig;
 
 ---
 
-### 3단계: 최적화된 `Dockerfile` 작성
+### 3단계: 대형 이미지 렌더링
+
+[대형 이미지](https://picsum.photos/1000)를 렌더링하도록 페이지를 수정한다.
+
+```tsx
+<NextImage
+  className={styles.logo}
+  src="https://picsum.photos/1000"
+  alt="Next.js logo"
+  width={180}
+  height={38}
+  priority
+/>
+```
+
+### 4단계: 최적화된 `Dockerfile` 작성
 
 프로덕션 배포를 위한 효율적인 멀티-스테이지(multi-stage) `Dockerfile`을 작성한다.   
 이 Dockerfile은 의존성 설치, 애플리케이션 빌드, 그리고 최종 실행 단계를 분리하여 이미지 크기를 최소화하고 빌드 캐시를 효율적으로 사용한다.  
@@ -108,7 +123,7 @@ CMD ["node", "server.js"]
 
 ---
 
-### 4단계: Docker 이미지 빌드 및 실행
+### 5단계: Docker 이미지 빌드 및 실행
 
 작성한 `Dockerfile`을 사용하여 이미지를 빌드하고 컨테이너를 실행한다.
 
