@@ -36,7 +36,7 @@ class CacheHandler {
             return null;
         }
 
-        console.log(`[Cache Handler] HIT`, entry);
+        console.log(`히트다 히트`, entry);
         return entry;
     }
 
