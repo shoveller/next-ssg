@@ -40,12 +40,13 @@ module.exports = nextConfig;
 
 ### 3단계: 대형 이미지 렌더링
 
-[대형 이미지](https://picsum.photos/1000)를 렌더링하도록 페이지를 수정한다.
+로컬이미지를 렌더링하도록 페이지를 수정한다.  
+`/public/dog.png` 라는 이미지를 배치한 상태이다.  
 
 ```tsx
 <NextImage
   className={styles.logo}
-  src="https://picsum.photos/1000"
+  src="/dog.png"
   alt="Next.js logo"
   width={180}
   height={38}
@@ -137,6 +138,7 @@ docker run -p 3000:3000 my-next-app
 ```
 
 이제 브라우저에서 `http://localhost:3000`으로 접속하면, `next/image`로 렌더링된 이미지들이 `sharp`를 통해 최적화되어 제공되는 것을 확인할 수 있다.
+`.next/cache/images` 안에 최적화된 이미지가 저장된다.  
 
 ---
 
@@ -147,4 +149,4 @@ docker run -p 3000:3000 my-next-app
 3.  **멀티-스테이지 `Dockerfile` 작성**: 효율적인 캐싱과 최소한의 이미지 크기를 위해 빌드 단계를 분리한다.
 4.  **빌드 및 실행**: `docker build`와 `docker run` 명령어로 애플리케이션을 실행한다.
 
-위 단계를 따르면 셀프호스팅 환경에서도 Next.js의 이미지 최적화 기능을 완벽하게 활용할 수 있다.
+위 단계를 따르면 셀프호스팅 환경에서 Next.js의 이미지 최적화 기능을 완벽하게 활용할 수 있다.
