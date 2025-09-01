@@ -10,19 +10,9 @@
 ---
 
 # 사용법
-## 다운로드
+## 인스톨
 ```shell
-curl -o install.sh https://raw.githubusercontent.com/shoveller/next-ssg/main/install.sh
-```
-
-## 실행권한 부여
-```shell
-chmod +x install.sh
-```
-
-## 설치
-```shell
-./install.sh
+curl -sSL https://raw.githubusercontent.com/shoveller/next-ssg/main/install.sh | bash
 ```
 
 ---
