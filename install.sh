@@ -348,37 +348,34 @@ step4_setup_prettier() {
         "Prettier 설치 실패"
     
     # prettier.config.mjs 생성
-    cat > prettier.config.mjs << 'EOF'
-/** @type {import('prettier').Config} */
-const config = {
-	endOfLine: "lf",
-	semi: false,
-	singleQuote: true,
-	tabWidth: 2,
-	trailingComma: "none",
-	// import sort[s]
-	plugins: [
-		'prettier-plugin-css-order',
-		'prettier-plugin-classnames'
-		'@ianvs/prettier-plugin-sort-imports',
-	],
-	importOrder: [
-		'^react',
-		'^next',
-		'^react-router',
-		'',
-		'<BUILTIN_MODULES>',
-		'<THIRD_PARTY_MODULES>',
-		'',
-		'.css$',
-		'.scss$',
-		'^[.]'
-	],
-	importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy']
-	// import sort[e]
+    cat > .prettierrc.json << 'EOF'
+{
+  "endOfLine": "lf",
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "plugins": [
+    "prettier-plugin-css-order",
+    "prettier-plugin-classnames",
+    "@ianvs/prettier-plugin-sort-imports"
+  ],
+  "importOrder": [
+    "^react",
+    "^next",
+    "^react-router",
+    "",
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    ".css$",
+    ".scss$",
+    "^[.]"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.0.0",
+  "importOrderCaseSensitive": false
 }
-
-export default config;
 EOF
 
     # package.json에 prettier 스크립트 추가
