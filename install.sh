@@ -358,9 +358,9 @@ const config = {
 	trailingComma: "none",
 	// import sort[s]
 	plugins: [
-		'@ianvs/prettier-plugin-sort-imports',
 		'prettier-plugin-css-order',
 		'prettier-plugin-classnames'
+		'@ianvs/prettier-plugin-sort-imports',
 	],
 	importOrder: [
 		'^react',
