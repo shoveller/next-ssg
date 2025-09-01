@@ -379,7 +379,7 @@ step4_setup_prettier() {
 EOF
 
     # package.json에 prettier 스크립트 추가
-    npm pkg set scripts.prettier="prettier --write \"**/*.{ts,tsx,cjs,mjs,json,html,css,js,jsx}\" --cache --config prettier.config.mjs"
+    npm pkg set scripts.prettier="prettier --write \"**/*.{ts,tsx,cjs,mjs,json,html,css,js,jsx}\" --cache"
     
     print_success "Prettier 설정 완료"
     print_info "Import 정렬, CSS 정렬, 클래스명 정렬 플러그인 포함"
