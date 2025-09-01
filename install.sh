@@ -5,13 +5,6 @@
 
 set -e  # 에러 발생 시 스크립트 종료
 
-# 비대화형 모드 감지
-if [[ ! -t 0 ]]; then
-    INTERACTIVE=false
-else
-    INTERACTIVE=true
-fi
-
 # 색상 정의
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -69,15 +62,6 @@ print_info() {
 ask_confirmation() {
     local message="$1"
     local default="${2:-y}"
-    
-    # 비대화형 모드에서는 기본값 사용
-    if [[ "$INTERACTIVE" == "false" ]]; then
-        echo -e "${YELLOW}${message} (자동: ${default})${NC}"
-        case "$default" in
-            y|yes|예|네 ) return 0;;
-            * ) return 1;;
-        esac
-    fi
     
     if [[ "$default" == "y" ]]; then
         prompt="${message} (Y/n): "
@@ -177,24 +161,6 @@ get_project_info() {
     print_header
     echo -e "${CYAN}📝 프로젝트 정보 입력${NC}"
     echo ""
-    
-    # 비대화형 모드에서는 기본 프로젝트 이름 사용
-    if [[ "$INTERACTIVE" == "false" ]]; then
-        local counter=1
-        PROJECT_NAME="my-next-ssg-app"
-        
-        # 중복 디렉토리 확인 및 번호 추가
-        while [[ -d "$PROJECT_NAME" ]]; do
-            PROJECT_NAME="my-next-ssg-app-$counter"
-            ((counter++))
-        done
-        
-        echo -e "${YELLOW}비대화형 모드: 자동 프로젝트 이름 설정${NC}"
-        print_info "프로젝트 이름: $PROJECT_NAME"
-        print_info "생성 위치: $(pwd)/$PROJECT_NAME"
-        echo ""
-        return 0
-    fi
     
     while [[ -z "$PROJECT_NAME" ]]; do
         echo -ne "${YELLOW}프로젝트 이름을 입력하세요: ${NC}"
