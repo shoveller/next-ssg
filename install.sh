@@ -343,7 +343,7 @@ step4_setup_prettier() {
     echo ""
     
     # Prettier 및 플러그인 설치
-    run_command "pnpm i -D prettier @ianvs/prettier-plugin-sort-imports prettier-plugin-css-order prettier-plugin-classnames" \
+    run_command "pnpm i -D prettier @trivago/prettier-plugin-sort-imports prettier-plugin-css-order prettier-plugin-classnames" \
         "Prettier 및 플러그인 설치 완료" \
         "Prettier 설치 실패"
     
@@ -358,23 +358,19 @@ step4_setup_prettier() {
   "plugins": [
     "prettier-plugin-css-order",
     "prettier-plugin-classnames",
-    "@ianvs/prettier-plugin-sort-imports"
+    "@trivago/prettier-plugin-sort-imports"
   ],
   "importOrder": [
     "^react",
     "^next",
-    "^react-router",
-    "",
     "<BUILTIN_MODULES>",
     "<THIRD_PARTY_MODULES>",
-    "",
     ".css$",
     ".scss$",
     "^[.]"
   ],
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "importOrderTypeScriptVersion": "5.0.0",
-  "importOrderCaseSensitive": false
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
 EOF
 
