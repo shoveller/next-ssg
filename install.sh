@@ -369,7 +369,6 @@ step4_setup_prettier() {
     ".scss$",
     "^[.]"
   ],
-  "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
 EOF
