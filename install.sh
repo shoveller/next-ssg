@@ -492,7 +492,7 @@ const customCodeStyles = {
 const ignorePatterns = {
   name: 'ignore-patterns',
   // 목적파일을 저장하는 디렉토리를 추가
-  ignores: ['**/*.d.ts', '**/*.d.mts', '**/*.d.cts', '.next']
+  ignores: ['**/*.d.ts', '**/*.d.mts', '**/*.d.cts', '.next', 'public']
 }
 
 const eslintConfig = [
