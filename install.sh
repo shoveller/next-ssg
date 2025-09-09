@@ -563,7 +563,7 @@ step7_setup_storybook() {
         echo -e "${BLUE}Storybook을 설치합니다...${NC}"
         echo ""
         
-        run_command "pnpm create storybook@latest" \
+        run_command "CI=true pnpm create storybook@latest --yes --skip-install --package-manager pnpm" \
             "Storybook 설치 완료" \
             "Storybook 설치 실패"
         
